@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/svadba-r-s",
+            "baseHref": "/Svadba-R-S/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -98,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
