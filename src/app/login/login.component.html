@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1 class="title">R&S</h1>
+    <p class="subtitle">naša svadba</p>
+
+    <div class="form-container">
+      <p class="access-label">Prístupový kód</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <input type="text" formControlName="accessCode" class="code-input" placeholder="">
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <button type="submit" class="submit-button">Vstúpiť</button>
+      </form>
+    </div>
+
+    <div class="welcome-message">
+      <p>Srdečne Vás vítame na našom svadobnom webe</p>
+    </div>
+  </div>
+</div>
