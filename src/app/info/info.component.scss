@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Lucy Rose";
+    src: url("/assets/fonts/lucyrose.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Coldiac";
+    src: url("/assets/fonts/coldiac.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Dream Avenue";
+    src: url("/assets/fonts/dreamavenue.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("/assets/fonts/cinzel.woff2") format("woff2");
+}
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: #f5f7ec;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 2px solid #ddbea9;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-family: "Dream Avenue", cursive;
+    font-size: 2.5rem;
+    color: #c58c6e;
+}
+
+.logout-button {
+    background-color: #d4a7ac;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    color: #6b705c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #c58c6e;
+        color: white;
+    }
+}
+
+.content {
+    font-family: "Coldiac", sans-serif;
+    color: #6b705c;
+
+    h1 {
+        font-family: "Cinzel", serif;
+        font-size: 2.5rem;
+        color: #c58c6e;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+}
