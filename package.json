@@ -4,7 +4,8 @@
   "scripts": {
     "serve": "ng serve",
     "build:prod": "ng build --configuration production",
-    "deploy": "npx angular-cli-ghpages --dir=dist/Svadba-R-S/browser"
+    "deploy": "npx angular-cli-ghpages --dir=dist/Svadba-R-S/browser",
+    "deploy:all": "npm run build:prod && npm run deploy"
   },
   "private": true,
   "dependencies": {
