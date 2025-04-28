@@ -14,7 +14,10 @@
           {{ errorMessage }}
         </div>
 
-        <button type="submit" class="submit-button">Vstúpiť</button>
+        <button type="submit" class="submit-button" [disabled]="loading">
+          <span *ngIf="!loading">Vstúpiť</span>
+          <span *ngIf="loading">Overujem...</span>
+        </button>
       </form>
     </div>
 

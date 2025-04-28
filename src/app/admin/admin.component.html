@@ -1,0 +1,104 @@
+<div class="admin-container">
+  <div class="admin-card">
+    <h1 class="title">Admin Panel</h1>
+
+    <!-- Login formulár -->
+    <div *ngIf="!isAuthenticated" class="login-section">
+      <p class="subtitle">Prihláste sa pre správu prístupových kódov</p>
+      <div class="admin-form">
+        <input type="password" [(ngModel)]="passwordInput" class="admin-input" placeholder="Admin heslo">
+        <button class="admin-button" (click)="login()">Prihlásiť sa</button>
+      </div>
+    </div>
+
+    <!-- Admin sekcia po prihlásení -->
+    <div *ngIf="isAuthenticated" class="admin-section">
+      <div class="action-bar">
+        <p class="subtitle">Správa prístupových kódov</p>
+        <button class="logout-button" (click)="logout()">Odhlásiť sa</button>
+      </div>
+
+      <!-- Formulár na pridanie/editáciu kódu -->
+      <div class="code-form">
+        <h2>{{ editMode ? 'Upraviť kód' : 'Pridať nový kód' }}</h2>
+        <form [formGroup]="codeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="code">Prístupový kód:</label>
+            <input type="text" id="code" formControlName="code" class="admin-input">
+            <div *ngIf="codeForm.get('code')?.errors?.['required'] && codeForm.get('code')?.touched" class="error-text">
+              Kód je povinný
+            </div>
+            <div *ngIf="codeForm.get('code')?.errors?.['minlength']" class="error-text">
+              Kód musí mať aspoň 4 znaky
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Meno/popis:</label>
+            <input type="text" id="name" formControlName="name" class="admin-input">
+            <div *ngIf="codeForm.get('name')?.errors?.['required'] && codeForm.get('name')?.touched" class="error-text">
+              Meno/popis je povinný
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" formControlName="isActive">
+              Aktívny
+            </label>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="admin-button" [disabled]="codeForm.invalid">
+              {{ editMode ? 'Uložiť zmeny' : 'Pridať kód' }}
+            </button>
+            <button *ngIf="editMode" type="button" class="cancel-button" (click)="resetForm()">
+              Zrušiť
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Správa / Error hlásenie -->
+      <div *ngIf="message" class="message" [ngClass]="{ 'error': isError, 'success': !isError }">
+        {{ message }}
+      </div>
+
+      <!-- Zoznam existujúcich kódov -->
+      <div class="codes-list">
+        <h2>Existujúce kódy</h2>
+        <div *ngIf="isLoading" class="loading">Načítavam...</div>
+        <div *ngIf="!isLoading && accessCodes.length === 0" class="no-data">Žiadne prístupové kódy neboli nájdené</div>
+
+        <table *ngIf="accessCodes.length > 0">
+          <thead>
+            <tr>
+              <th>Kód</th>
+              <th>Meno/popis</th>
+              <th>Stav</th>
+              <th>Akcie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let code of accessCodes">
+              <td>{{ code.code }}</td>
+              <td>{{ code.name }}</td>
+              <td>
+                <span class="status" [ngClass]="{ 'active': code.isActive, 'inactive': !code.isActive }">
+                  {{ code.isActive ? 'Aktívny' : 'Neaktívny' }}
+                </span>
+              </td>
+              <td class="actions">
+                <button class="action-button edit" (click)="editAccessCode(code)">Upraviť</button>
+                <button class="action-button toggle" (click)="toggleStatus(code)">
+                  {{ code.isActive ? 'Deaktivovať' : 'Aktivovať' }}
+                </button>
+                <!--<button class="action-button delete" (click)="deleteAccessCode(code.key!)">Zmazať</button>-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
