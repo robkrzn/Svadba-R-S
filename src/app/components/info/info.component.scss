@@ -1,22 +1,5 @@
-@font-face {
-    font-family: "Lucy Rose";
-    src: url("/assets/fonts/lucyrose.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Coldiac";
-    src: url("/assets/fonts/coldiac.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Dream Avenue";
-    src: url("/assets/fonts/dreamavenue.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Cinzel";
-    src: url("/assets/fonts/cinzel.woff2") format("woff2");
-}
+/* Import Google fontu */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 :host {
     display: block;
@@ -40,7 +23,8 @@
 }
 
 .logo {
-    font-family: "Dream Avenue", cursive;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
     font-size: 2.5rem;
     color: #c58c6e;
 }
@@ -50,7 +34,7 @@
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
-    font-family: "Cinzel", serif;
+    font-family: 'Cinzel', serif;
     font-size: 1rem;
     color: #6b705c;
     cursor: pointer;
@@ -63,11 +47,11 @@
 }
 
 .content {
-    font-family: "Coldiac", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #6b705c;
 
     h1 {
-        font-family: "Cinzel", serif;
+        font-family: 'Cinzel', serif;
         font-size: 2.5rem;
         color: #c58c6e;
         text-align: center;

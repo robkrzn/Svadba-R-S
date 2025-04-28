@@ -1,132 +1,116 @@
-@font-face {
-    font-family: 'Lucy Rose';
-    src: url('/assets/fonts/lucyrose.woff2') format('woff2');
-  }
+/* Import Google fontu */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f7ec;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #ddbea9;
+  border-radius: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: #6b705c;
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: #6b705c;
+  text-align: center;
+  margin-top: 0;
+}
+
+.form-container {
+  margin: 40px 0;
+}
+
+.access-label {
+  font-family: 'Cinzel', serif;
+  color: #6b705c;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.code-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c58c6e;
+  border-radius: 8px;
+  background-color: #e9cbc1;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #6b705c;
+  text-align: center;
   
-  @font-face {
-    font-family: 'Coldiac';
-    src: url('/assets/fonts/coldiac.woff2') format('woff2');
+  &:focus {
+    outline: none;
+    border-color: #6b705c;
   }
+}
+
+.error-message {
+  color: #b22222;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  background-color: #c58c6e;
+  color: white;
+  font-family: 'Cinzel', serif;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
   
-  @font-face {
-    font-family: 'Dream Avenue';
-    src: url('/assets/fonts/dreamavenue.woff2') format('woff2');
+  &:hover {
+    background-color: #6b705c;
   }
+}
+
+.welcome-message {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #d4a7ac;
+  padding: 20px;
+  border-top-left-radius: 30px;
+  width: 50%;
   
-  @font-face {
-    font-family: 'Cinzel';
-    src: url('/assets/fonts/cinzel.woff2') format('woff2');
-  }
-  
-  :host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f7ec;
-  }
-  
-  .login-container {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-  }
-  
-  .login-card {
-    background-color: #ddbea9;
-    border-radius: 20px;
-    padding: 40px 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .title {
-    font-family: 'Dream Avenue', cursive;
-    font-size: 4rem;
+  p {
+    font-family: Arial, Helvetica, sans-serif;
     color: #6b705c;
+    font-size: 1rem;
     text-align: center;
     margin: 0;
   }
-  
-  .subtitle {
-    font-family: 'Coldiac', sans-serif;
-    font-size: 1.5rem;
-    color: #6b705c;
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .form-container {
-    margin: 40px 0;
-  }
-  
-  .access-label {
-    font-family: 'Cinzel', serif;
-    color: #6b705c;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .code-input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #c58c6e;
-    border-radius: 8px;
-    background-color: #e9cbc1;
-    font-family: 'Cinzel', serif;
-    font-size: 1.1rem;
-    color: #6b705c;
-    text-align: center;
-    
-    &:focus {
-      outline: none;
-      border-color: #6b705c;
-    }
-  }
-  
-  .error-message {
-    color: #b22222;
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
-    background-color: #c58c6e;
-    color: white;
-    font-family: 'Cinzel', serif;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    margin-top: 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
-    &:hover {
-      background-color: #6b705c;
-    }
-  }
-  
-  .welcome-message {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: #d4a7ac;
-    padding: 20px;
-    border-top-left-radius: 30px;
-    width: 50%;
-    
-    p {
-      font-family: 'Coldiac', sans-serif;
-      color: #6b705c;
-      font-size: 1rem;
-      text-align: center;
-      margin: 0;
-    }
-  }
+}
