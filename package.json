@@ -1,5 +1,6 @@
 {
   "name": "svadba-r-s",
+  "deployWebsite": "https://robkrzn.github.io/Svadba-R-S/",
   "version": "0.0.0",
   "scripts": {
     "serve": "ng serve",
