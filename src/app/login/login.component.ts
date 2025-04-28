@@ -15,7 +15,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage = '';
-  accessCode = 'R&S2025'; // Prístupový kód pre svadbu
+  accessCode = 'R-S2025'; // Prístupový kód pre svadbu
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,18 +29,18 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Kontrola, či bol kód zadaný v URL (napr. z QR kódu)
     this.route.queryParams.subscribe(params => {
-      if (params['code'] && params['code'] === this.accessCode) {
-        this.authService.login(params['code']);
-        this.router.navigate(['/info']);
+      if (params['code']) {
+        if (params['code'] === this.accessCode) {
+          this.authService.login(params['code']);
+          this.router.navigate(['/info']);
+        } else {
+          console.log('Kód je nesprávny');
+        }
+      } else {
+        console.log('URL neobsahuje parameter code');
       }
     });
-    
-    // Ak je už užívateľ prihlásený, presmerujeme ho na info stránku
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/info']);
-    }
   }
 
   onSubmit(): void {

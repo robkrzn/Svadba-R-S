@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
     private isLoggedIn = false;
-    private accessCode = 'R&S2025'; // Rovnaký kód ako v LoginComponent
+    private accessCode = 'R-S2025'; // Rovnaký kód ako v LoginComponent
 
     constructor() {
         // Kontrola, či je užívateľ už prihlásený (napríklad po refreshe stránky)

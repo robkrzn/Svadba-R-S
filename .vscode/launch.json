@@ -1,16 +1,54 @@
 {
-  "version": "0.2.0",
+  "version": "2.0.0",
   "configurations": [
     {
       "type": "msedge",
       "request": "launch",
-      "name": "Debug Angular v MS Edge",
+      "name": "Launch Edge against localhost",
       "url": "http://localhost:4200/Svadba-R-S",
       "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
       "sourceMapPathOverrides": {
-        "webpack:///./src/*": "${webRoot}/src/*"
+        "webpack:///./src/*": "${webRoot}/src/*",
+        "webpack:///src/*": "${webRoot}/src/*",
+        "./*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*",
+        "/src/*": "${webRoot}/src/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///(*.)": "${webRoot}/*",
+        "webpack:///*": "*",
+        "C:/Projects/Angular/Svadba-R+S/src/*": "${workspaceFolder}/src/*"
       },
-      "sourceMaps": true
+      "preLaunchTask": "npm: serve",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:4200/Svadba-R-S",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/src/*",
+        "webpack:///src/*": "${webRoot}/src/*",
+        "./*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*",
+        "/src/*": "${webRoot}/src/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///(*.)": "${webRoot}/*",
+        "webpack:///*": "*"
+      },
+      "preLaunchTask": "npm: serve",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
     }
   ]
 }
