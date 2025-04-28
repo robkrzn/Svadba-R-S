@@ -6,7 +6,7 @@ import {
 } from 'firebase/firestore';
 import { Observable, from, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 export interface AccessCode {
     id?: string;

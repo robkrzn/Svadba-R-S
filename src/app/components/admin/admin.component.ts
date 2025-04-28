@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
-import { FirebaseService, AccessCode } from '../firebase.service';
+import { FirebaseService, AccessCode } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-admin',
